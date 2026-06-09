@@ -2,7 +2,6 @@ package com.example.demo.data;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,8 +9,20 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class VoitureTest {
 
     @Test
-    void creerVoiture(){
-        assertEquals(1,1);
+    void testCreerVoitureConstructeurVide() {
+        // Initialisation
+        Voiture voiture = new Voiture();
+        
+        // Action (utilisation des setters)
+        voiture.setMarque("Renault");
+        voiture.setPrix(15000);
+        voiture.setId(1);
+
+        // Vérification
+        assertEquals("Renault", voiture.getMarque(), "La marque doit être Renault");
+        assertEquals(15000, voiture.getPrix(), "Le prix doit être 15000");
+        assertEquals(1, voiture.getId(), "L'id doit être 1");
     }
 
+    
 }
