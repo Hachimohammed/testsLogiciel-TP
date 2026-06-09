@@ -9,6 +9,7 @@ public class Voiture {
 
     public Voiture(){
     }
+    // constructeur
 
     public Voiture(String marque, int prix) {
         this.marque = marque;
