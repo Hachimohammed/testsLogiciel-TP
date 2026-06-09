@@ -24,5 +24,13 @@ public class VoitureTest {
         assertEquals(1, voiture.getId(), "L'id doit être 1");
     }
 
-    
+    @Test
+    void testCreerVoitureAvecParametres() {
+        
+        Voiture voiture = new Voiture("Peugeot", 20000);
+
+       
+        assertEquals("Peugeot", voiture.getMarque(), "La marque doit être Peugeot");
+        assertEquals(20000, voiture.getPrix(), "Le prix doit être 20000");
+    }
 }
