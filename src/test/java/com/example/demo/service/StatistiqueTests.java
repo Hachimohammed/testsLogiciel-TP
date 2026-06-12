@@ -33,5 +33,15 @@ public class StatistiqueTests {
         assertEquals(15000, echantillon.getPrixMoyen());
     }
 
-    
+    @Test
+    public void testPrixMoyen_SansVoiture_LanceException() {
+        
+        // Préparation
+        StatistiqueImpl statistique = new StatistiqueImpl();
+
+        // Exécution & Vérification
+        assertThrows(ArithmeticException.class, () -> {
+            statistique.prixMoyen();
+        });
+    }
 }
