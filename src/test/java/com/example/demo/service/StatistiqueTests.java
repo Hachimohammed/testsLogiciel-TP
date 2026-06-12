@@ -36,7 +36,7 @@ public class StatistiqueTests {
     @Test
     public void testPrixMoyen_SansVoiture_LanceException() {
         
-        // Préparation
+        // Préparationn
         StatistiqueImpl statistique = new StatistiqueImpl();
 
         // Exécution & Vérification
