@@ -26,7 +26,7 @@ class WebTests {
     @Autowired
     MockMvc mockMvc;
 
-    
+    // 1. Test de la création d'une voiture (Requête POST)
     @Test
     public void testCreerVoiture() throws Exception {
         String jsonVoiture = "{\"marque\":\"f\",\"prix\":100}";
