@@ -28,6 +28,8 @@ public class StatistiqueTests {
         Echantillon echantillon = statistique.prixMoyen();
 
       
+        assertEquals(2, echantillon.getNombreDeVoitures());
+        assertEquals(15000, echantillon.getPrixMoyen());
     }
 
     
