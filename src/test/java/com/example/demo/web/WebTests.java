@@ -39,7 +39,16 @@ class WebTests {
         verify(statistiqueImpl, times(1)).ajouter(any(Voiture.class));
     }
 
-   
+    // 2. Test de la récupération des statistiques (Requête GET - Succès)
+    @Test
+    public void testGetStatistiques() throws Exception {
+        Echantillon fauxEchantillon = new Echantillon(5, 20000);
+        when(statistiqueImpl.prixMoyen()).thenReturn(fauxEchantillon);
+
+        mockMvc.perform(get("/statistique"))
+                .andExpect(status().isOk())
+                
+    }
 
     
 }
