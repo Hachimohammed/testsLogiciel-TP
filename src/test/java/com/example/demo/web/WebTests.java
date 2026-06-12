@@ -57,6 +57,8 @@ class WebTests {
         // Préparation : On force le mock à lancer une ArithmeticException (comme si la liste était vide)
         when(statistiqueImpl.prixMoyen()).thenThrow(new ArithmeticException());
 
-       
+        // Exécution & Vérification 
+        mockMvc.perform(get("/statistique"))
+                .andExpect(status().isBadRequest());
     }
 }
