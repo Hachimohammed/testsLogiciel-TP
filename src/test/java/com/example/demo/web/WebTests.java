@@ -51,5 +51,12 @@ class WebTests {
                 .andExpect(jsonPath("$.prixMoyen").value(20000));
     }
 
-    
+    // 3. Test de la récupération des statistiques (Requête GET - Échec / Liste vide)
+    @Test
+    public void testGetStatistiques_SansVoiture() throws Exception {
+        // Préparation : On force le mock à lancer une ArithmeticException (comme si la liste était vide)
+        when(statistiqueImpl.prixMoyen()).thenThrow(new ArithmeticException());
+
+       
+    }
 }
