@@ -14,7 +14,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
@@ -27,6 +26,20 @@ class WebTests {
     @Autowired
     MockMvc mockMvc;
 
-  
+    
+    @Test
+    public void testCreerVoiture() throws Exception {
+        String jsonVoiture = "{\"marque\":\"f\",\"prix\":100}";
 
+        mockMvc.perform(post("/voiture")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(jsonVoiture))
+                .andExpect(status().isOk());
+
+        verify(statistiqueImpl, times(1)).ajouter(any(Voiture.class));
+    }
+
+   
+
+    
 }
