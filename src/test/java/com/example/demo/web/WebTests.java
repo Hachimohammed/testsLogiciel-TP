@@ -47,7 +47,8 @@ class WebTests {
 
         mockMvc.perform(get("/statistique"))
                 .andExpect(status().isOk())
-                
+                .andExpect(jsonPath("$.nombreDeVoitures").value(5))
+                .andExpect(jsonPath("$.prixMoyen").value(20000));
     }
 
     
