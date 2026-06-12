@@ -16,6 +16,7 @@ public class StatistiqueTests {
     @Test
     public void testPrixMoyen_AvecVoitures(@Mock Voiture voiture1, @Mock Voiture voiture2) {
         
+        // Préparation
         StatistiqueImpl statistique = new StatistiqueImpl();
 
         when(voiture1.getPrix()).thenReturn(10000);
@@ -24,10 +25,10 @@ public class StatistiqueTests {
         statistique.ajouter(voiture1);
         statistique.ajouter(voiture2);
 
-        
+        // Exécution
         Echantillon echantillon = statistique.prixMoyen();
 
-      
+        // Vérification
         assertEquals(2, echantillon.getNombreDeVoitures());
         assertEquals(15000, echantillon.getPrixMoyen());
     }
