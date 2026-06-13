@@ -16,7 +16,7 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
       - name: Build and test
-      # Compilation du projet et lancement des tests écrits par le développeur
+      # Compilation du projet et lancement des tests écrits par le développeurr
         working-directory: .
         run: |
           export SHELL=/bin/bash
